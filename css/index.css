@@ -1,0 +1,108 @@
+body{
+	margin:0;
+	font-size:12px;
+	background-color:#EEE;
+	font-family: sans-serif;
+}
+.padDfTopBottom{
+	padding:20px;
+}
+#fbPages{
+	position:relative;
+	z-index:100;
+}
+#inputFbCategory{
+	padding:5px 10px;
+	width:200px;
+	background-color:#FFF;
+	color:#666;
+	border:1px solid #999;
+	outline:none;
+}
+#inputFbCategory:focus{
+	border:1px solid #333;
+}
+#doSearch{
+	padding:5px 25px;
+	background-color:#2aa6d4;
+	font-size:14px;
+	color:#FFF;
+	outline:0px;
+	border:1px solid #2B738D;
+	cursor:pointer;
+}
+#doSearch:hover{
+	background-color:#7FC5DF;
+	border:1px solid #2aa6d4;
+}
+.pageHolder{
+	padding:25px 50px;
+	background-color:#FFF;
+	box-shadow: 2px 2px 2px 2px #CCC;
+	margin:0 0 15px 20px;
+	width:300px;
+	display:inline-block;
+	position: relative;
+	-webkit-transition: -webkit-transform 150ms;
+	transition: transform 150ms;
+	-ms-transition: -ms-transform 150ms;
+	z-index: 100;
+}
+.pageHolder:hover{
+	box-shadow:0px 0px 2px 2px #CCC;
+	-ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+        transform: scale(1.1);
+        z-index:200;	
+}
+.pageName{
+	padding-bottom:6px;
+	font-size:25px;
+	color:#333;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	width:100%;
+	display:inline-block;
+	text-decoration: none;
+}
+.pageName:hover{
+	text-decoration: underline;
+}
+.pageCategory{
+	font-size:20px;
+	color:#999;
+}
+#loadMore{
+	margin: 20px 40px;
+	padding: 10px 0;
+	background-color: #CCC;
+	color: #333;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	cursor:pointer;
+}
+#loadMore:hover{
+	background-color: #666;
+	color:#FFF;
+}
+#loadingIcon{
+	display:table;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.65);
+	z-index:200;
+	display:none;
+}
+.loadingTR{
+	display:table-row;
+}
+.loading{
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color:#EBEAFD;
+	font-size:22px;
+}
