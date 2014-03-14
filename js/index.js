@@ -1,9 +1,10 @@
-var getCategoriesUrl = "https://graph.facebook.com/search?q=%{search}&type=page&access_token=%{access_token}&limit=100";
+var getCategoriesUrl = "https://graph.facebook.com/search?q=%{search}&type=page&access_token=%{access_token}&limit=%{limit}";
 var pageOpenUrl = "https://www.facebook.com/pages/OpenID/%{page_id}";
 var accessToken = "254217074756643|0XzEWZLyNOZtYCgdnehEOCEax0s";
 var sampleUi = document.getElementById("sampleUi");
 var holder = document.getElementById("pagesContainer");
 var loadMoreUrl = "";
+var limit = 100;
 var jsonp = new function(){
 	const _blankFn = function(){};
 	var onSuccess = _blankFn;
@@ -22,13 +23,12 @@ var jsonp = new function(){
 				seperator = "&";
 			}
 			var src = url+seperator+"callback=jsonp.callback";
-		
 			var script = document.createElement("script");
 			script.type = "text/javascript";
 			script.async = true;
 			script.src = src;
 			var head = document.getElementsByTagName("head")[0];
-			head.appendChild(script);
+			head.appendChild(script);		
 			return true;
 		}catch(err){
 			console.error(err);
@@ -38,6 +38,7 @@ var jsonp = new function(){
 	this.callback = function(data){
 		if(timeoutObj) clearTimeout(timeoutObj);
 		onSuccess(true,data);
+		onSuccess = _blankFn;
 	};
 	var onTimeout = function(){
 		onSuccess(false);
@@ -89,6 +90,7 @@ function getCategories(search){
 	var url = getCategoriesUrl;
 	url = url.replace("%{search}",search);
 	url = url.replace("%{access_token}",accessToken);
+	url = url.replace("%{limit}",limit);
 	holder.innerHTML = "";
 	showLoading(true);
 	jsonp.send(url,onCategoriesData);

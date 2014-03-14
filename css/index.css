@@ -74,17 +74,21 @@ body{
 	color:#999;
 }
 #loadMore{
-	margin: 20px 40px;
-	padding: 10px 0;
-	background-color: #CCC;
+	padding: 41px 0;
+	background-color: #FFF;
 	color: #333;
 	text-align: center;
-	font-size: 15px;
-	font-weight: bold;
-	cursor:pointer;
+	font-size: 25px;
+	cursor: pointer;
+	display: inline-block;
+	width: 400px;
+	position: relative;
+	vertical-align: top;
+	box-shadow: 2px 2px 2px 2px #CCC;
+	margin: 0 20px;
 }
 #loadMore:hover{
-	background-color: #666;
+	background-color: #999;
 	color:#FFF;
 }
 #loadingIcon{
